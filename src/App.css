@@ -24,6 +24,9 @@
   color: white;
 }
 
+body {
+  font-family: "Open Sans Condensed", sans-serif;
+}
 .App-link {
   color: #61dafb;
 }
