@@ -26,12 +26,16 @@
 
 body {
   font-family: "Open Sans Condensed", sans-serif;
-  padding:20px 60px;
+  padding: 20px 60px;
 }
 .App-link {
   color: #61dafb;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
