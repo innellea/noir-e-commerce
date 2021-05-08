@@ -3,8 +3,8 @@ import React from "react";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
-
 import "./sign-up.styles.scss";
+
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -41,7 +41,9 @@ class SignUp extends React.Component {
         confirmPassword: "",
       });
     } catch (error) {
-      document.getElementsByClassName("sign-up-error")[0].innerHTML = error;
+      document.querySelectorAll(
+        ".alert--colored,bold-text"
+      )[0].innerHTML = error;
       console.log(error);
     }
   };
@@ -50,7 +52,6 @@ class SignUp extends React.Component {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
-
   render() {
     const { displayName, email, password, confirmPassword } = this.state;
     return (
@@ -90,11 +91,9 @@ class SignUp extends React.Component {
             label="Confirm Password"
             required
           ></FormInput>
-          <h2 className="sign-up-error"></h2>
           <CustomButton onClick={this.handleSubmit} type="submit">
             SIGN UP
           </CustomButton>
-          <h2></h2>
         </form>
       </div>
     );
