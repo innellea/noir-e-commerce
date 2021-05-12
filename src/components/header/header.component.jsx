@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 // Comps
-import { ReactComponent as Logo } from "../../assets/logo-crown.svg";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { auth } from "../../firebase/firebase.utils";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
@@ -23,7 +23,7 @@ const Header = ({ currentUser, hidden }) => (
       <Link className="option" to="/shop">
         SHOP
       </Link>
-      <Link exact path className="option" to="/shop">
+      <Link className="option" to="/shop">
         CONTACT
       </Link>
       {currentUser ? (
