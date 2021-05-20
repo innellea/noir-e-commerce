@@ -5,7 +5,6 @@ import { persistStore } from "redux-persist";
 import logger from "redux-logger";
 
 import rootReducer from "./root-reducer";
-logger]; ///TODO : add middlewares
 
 const middlewares = [];
 
