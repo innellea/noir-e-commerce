@@ -2,23 +2,46 @@
   height: 70px;
   width: 100%;
   display: flex;
+  flex-flow: row;
+  flex-wrap: nowrap;
   justify-content: space-between;
   margin-bottom: 25px;
+  background-color:rgb(45,45,45);
+  vertical-align: baseline;
+  font-size: 100%;
+  padding:0;
+  position: relative;
+
 
   .logo-container {
+    padding-left: 25px;
+    display: inline-block;
+    vertical-align: top;
     height: 100%;
-    width: 70px;
-    padding: 25px;
-  }
+    padding-right: 18px;
+    align-self: flex-start;
 
+    // height: 100%;
+    // width: 70px;
+
+    // padding: 25px;
+    // padding-top:50px;
+  }
+  .logo {
+    // padding-bottom: 0px;
+    margin-bottom: 210px;
+  }
   .options {
     width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    color: white;
 
     .option {
+      font-size: 22px;
+      font-weight:bold;
       padding: 10px 15px;
       cursor: pointer;
     }
