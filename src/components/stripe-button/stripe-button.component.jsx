@@ -1,27 +1,26 @@
-import React from "react";
-import StripeCheckout from "react-stripe-checkout";
+import React from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
-  const publishableKey = "pk_test_Lbu1tC0ekdMbxRUuffsifXKs";
+  const publishableKey = 'pk_test_WBqax2FWVzS9QlpJScO07iuL';
 
-  const onToken = (token) => {
+  const onToken = token => {
     console.log(token);
-    alert("Payment successful");
-
+    alert('Payment Succesful!');
   };
 
   return (
     <StripeCheckout
-    label = 'Pay Now!'
-      name="Noir clothing"
+      label='Pay Now'
+      name='CRWN Clothing Ltd.'
       billingAddress
       shippingAddress
-      description={`Your total amount is $${price}`}
+      image='https://svgshare.com/i/CUz.svg'
+      description={`Your total is $${price}`}
       amount={priceForStripe}
-      panelLabel='Pay Now!'
+      panelLabel='Pay Now'
       token={onToken}
-      currency="USD"
       stripeKey={publishableKey}
     />
   );

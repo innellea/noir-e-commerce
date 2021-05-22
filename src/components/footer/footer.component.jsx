@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+
+// Styles
+import { FooterContainer, FooterAltContainer } from "./footer.styles";
 
 function Footer() {
   return (
-    <div className="footer">
-      <div className="footer-alt">Foooter</div>
-    </div>
-  )
+    <FooterContainer>
+      <FooterAltContainer>Foooter</FooterAltContainer>
+    </FooterContainer>
+  );
 }
 
 export default Footer;

@@ -20,6 +20,17 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   const snapShot = await userRef.get();
 
+  console.log({DocumentSnapshot: snapShot});
+
+
+  const collectionRef = firestore.collection(`users`);
+  const collectionSnapshot = await collectionRef.get();
+
+
+  console.log({ collectionSnapshot: collectionSnapshot.docs.map((doc) => doc.data()) });
+
+
+
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -38,13 +49,22 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-firebase.initializeApp(config);
 
-export const auth = firebase.auth();
+// import to firebase
+export const addCollectionAndDocuments = (collectionKey,objectsToAdd) =>{
+  const collectionRef = firestore.collection(collectionKey)
+  console.log(collectionRef)
+}
+
+// firebase.initializeApp(config);
+export default !firebase.apps.length
+  ? firebase.initializeApp(config)
+  : firebase.app();
+// export default firebase.app("noir-db");
+
 export const firestore = firebase.firestore();
+export const auth = firebase.auth();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
-
-export default firebase;
