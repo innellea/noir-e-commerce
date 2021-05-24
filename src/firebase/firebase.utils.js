@@ -20,16 +20,14 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   const snapShot = await userRef.get();
 
-  console.log({DocumentSnapshot: snapShot});
-
+  console.log({ DocumentSnapshot: snapShot });
 
   const collectionRef = firestore.collection(`users`);
   const collectionSnapshot = await collectionRef.get();
 
-
-  console.log({ collectionSnapshot: collectionSnapshot.docs.map((doc) => doc.data()) });
-
-
+  console.log({
+    collectionSnapshot: collectionSnapshot.docs.map((doc) => doc.data()),
+  });
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
@@ -50,11 +48,30 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 
+// convert collections to map
+export const convertCollectionsSnapshotToMap = (collection) => {
+  const transformedCollection = collection.docs.map((doc) => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items,
+    };
+  });
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
+
 // import to firebase
-export const addCollectionAndDocuments = (collectionKey,objectsToAdd) =>{
-  const collectionRef = firestore.collection(collectionKey)
-  console.log(collectionRef)
-}
+export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
+  const collectionRef = firestore.collection(collectionKey);
+  console.log(collectionRef);
+};
 
 // firebase.initializeApp(config);
 export default !firebase.apps.length
