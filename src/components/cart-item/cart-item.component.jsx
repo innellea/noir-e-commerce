@@ -1,14 +1,15 @@
-import React from "react";
+/* eslint-disable */
+import React from 'react';
 
 import {
   CartItemContainer,
   ItemDetailsContainer,
   CartItemImage,
-} from "./cart-item.styles";
+} from './cart-item.styles';
 
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => (
   <CartItemContainer>
-    <CartItemImage src={imageUrl} alt="item" />
+    <CartItemImage src={imageUrl} alt='item' />
     <ItemDetailsContainer>
       <span>{name}</span>
       <span>

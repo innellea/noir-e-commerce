@@ -1,8 +1,10 @@
+
 import ShopActionTypes from './shop.types';
 
-const updateCollections = (collectionsMap) => ({
+ const updateCollections = collectionsMap => ({
   type: ShopActionTypes.UPDATE_COLLECTIONS,
-  payload: collectionsMap,
+  payload: collectionsMap
 });
+
 
 export default updateCollections;
