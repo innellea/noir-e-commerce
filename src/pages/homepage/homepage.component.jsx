@@ -7,7 +7,7 @@ import { HomePageContainer } from "./homepage.styles";
 const HomePage = () => {
   return (
     <HomePageContainer>
-        <Directory />
+      <Directory />
     </HomePageContainer>
   );
 };

@@ -47,7 +47,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
-
 // convert collections to map
 export const convertCollectionsSnapshotToMap = (collection) => {
   const transformedCollection = collection.docs.map((doc) => {

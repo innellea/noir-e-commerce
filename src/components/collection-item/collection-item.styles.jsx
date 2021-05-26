@@ -1,9 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // Components
-import CustomButton from '../custom-button/custom-button.component';
-
-
+import CustomButton from "../custom-button/custom-button.component";
 
 export const CollectionItemContainer = styled.div`
   width: 22vw;

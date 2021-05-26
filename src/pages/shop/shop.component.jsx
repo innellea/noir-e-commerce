@@ -12,7 +12,6 @@ import {
   convertCollectionsSnapshotToMap,
 } from "../../firebase/firebase.utils.js";
 
-
 class ShopPage extends React.Component {
   unsubscribeFromSnapshot = null;
 
@@ -23,7 +22,7 @@ class ShopPage extends React.Component {
     this.unsubscribeFromSnapshot = collectionRef.onSnapshot(
       async (snapshot) => {
         const collectionsMap = convertCollectionsSnapshotToMap(snapshot);
-        updateCollections(collectionsMap)
+        updateCollections(collectionsMap);
       }
     );
   }
