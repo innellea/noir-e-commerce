@@ -23,8 +23,6 @@ class ShopPage extends React.Component {
     loading: true
   };
 
-  unsubscribeFromSnapshot = null;
-
   componentDidMount() {
     const { updateCollections } = this.props;
     const collectionRef = firestore.collection('collections');
@@ -35,6 +33,8 @@ class ShopPage extends React.Component {
       this.setState({ loading: false });
     });
   }
+
+  unsubscribeFromSnapshot = null;
 
   render() {
     const { match } = this.props;
