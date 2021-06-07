@@ -2,11 +2,10 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 
 import CollectionItem from "../collection-item/collection-item.component.jsx";
-
 import {
   CollectionPreviewContainer,
-  TitleContainer,
   PreviewContainer,
+  TitleContainer,
 } from "./collection-preview.styles.jsx";
 
 const CollectionPreview = ({ title, items, history, match, routeName }) => (

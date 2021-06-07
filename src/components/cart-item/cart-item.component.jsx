@@ -1,10 +1,9 @@
-/* eslint-disable */
 import React from 'react';
 
 import {
   CartItemContainer,
-  ItemDetailsContainer,
   CartItemImage,
+  ItemDetailsContainer,
 } from './cart-item.styles';
 
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => (

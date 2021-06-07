@@ -1,6 +1,7 @@
-import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+
+import firebase from "firebase/app";
 
 const config = {
   apiKey: "AIzaSyDxfPBrSTdZNpZAojJ4FJkJ6ePYs6RxJJs",
@@ -73,7 +74,7 @@ export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
 };
 
 // firebase.initializeApp(config);
-export default !firebase.apps.length
+export default firebase.apps.length === 0
   ? firebase.initializeApp(config)
   : firebase.app();
 // export default firebase.app("noir-db");

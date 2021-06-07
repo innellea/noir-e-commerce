@@ -2,12 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 
 import { addItem } from "../../redux/cart/cart.actions";
-
 import {
-  CollectionItemContainer,
-  CollectionFooterContainer,
   AddButton,
   BackgroundImage,
+  CollectionFooterContainer,
+  CollectionItemContainer,
   NameContainer,
   PriceContainer,
 } from "./collection-styles.styles.jsx";

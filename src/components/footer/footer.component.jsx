@@ -1,7 +1,7 @@
 import React from "react";
 
 // Styles
-import { FooterContainer, FooterAltContainer } from "./footer.styles.jsx";
+import { FooterAltContainer,FooterContainer } from "./footer.styles.jsx";
 
 function Footer() {
   return (

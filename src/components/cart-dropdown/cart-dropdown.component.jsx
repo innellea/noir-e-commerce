@@ -1,24 +1,23 @@
-/* eslint-disable */
-import React from "react";
-import { connect } from "react-redux";
-import { createStructuredSelector } from "reselect";
-import { withRouter } from "react-router-dom";
+import PropTypes from 'prop-types';
+import React from 'react';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 
-import CartItem from "../cart-item/cart-item.component";
-import { selectCartItems } from "../../redux/cart/cart.selectors";
-import { toggleCartHidden } from "../../redux/cart/cart.actions.js";
-
+import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+import CartItem from '../cart-item/cart-item.component';
 import {
-  CartDropdownContainer,
   CartDropdownButton,
-  EmptyMessageContainer,
+  CartDropdownContainer,
   CartItemsContainer,
-} from "./cart-dropdown.styles";
+  EmptyMessageContainer,
+} from './cart-dropdown.styles';
 
 const CartDropdown = ({ cartItems, history, dispatch }) => (
   <CartDropdownContainer>
     <CartItemsContainer>
-      {cartItems.length ? (
+      {cartItems.length > 0 ? (
         cartItems.map((cartItem) => (
           <CartItem key={cartItem.id} item={cartItem} />
         ))
@@ -28,7 +27,7 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     </CartItemsContainer>
     <CartDropdownButton
       onClick={() => {
-        history.push("/checkout");
+        history.push('/checkout');
         dispatch(toggleCartHidden());
       }}
     >
@@ -36,6 +35,17 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     </CartDropdownButton>
   </CartDropdownContainer>
 );
+
+CartDropdown.propTypes = {
+  cartItems: PropTypes.shape({
+    length: PropTypes.number,
+    map: PropTypes.func,
+  }),
+  dispatch: PropTypes.func,
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }),
+};
 
 const mapStateToProps = createStructuredSelector({
   cartItems: selectCartItems,
