@@ -1,0 +1,87 @@
+.header {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  background: white;
+  transition: all .8s ease 0s;
+
+
+  //Header Media Query
+  @media screen and (max-width: 800px) {
+    .logo-container {
+      width: auto;
+      padding: 0px;
+      }
+      .options {
+        width: auto !important;
+    }
+    }
+  @media screen and (max-width: 320px) {
+    .logo-container {
+      width: auto;
+      padding: 0px;
+      }
+      .options {
+          width: 50% !important;
+      }
+  }
+
+  .logo-container {
+    height: auto;
+    width: auto;
+    .st0 {
+      fill: #423148;
+      
+  }
+    // padding: 25px;
+    .logo {
+      width: 5vw;
+      height: auto;
+      min-width: 70px;
+      min-height: 35px;
+      margin-right: auto;
+    }
+  }
+
+  .options {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .option {
+      padding: 10px 15px;
+      cursor: pointer;
+      color: black;
+    }
+  }
+  
+  &.fixed {
+    position: sticky;
+    z-index: 5;
+    background: #000000de;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.09);
+    top: 0;
+      .st0 {
+        fill: #c6c6c6 !important;
+      }
+    .options{
+      color: white;
+
+      .option{
+        color: white;
+      }
+    }
+  .cart-icon {
+    color: white;
+    g > path {
+      fill: white !important;
+    }
+
+  }
+}
+}
+

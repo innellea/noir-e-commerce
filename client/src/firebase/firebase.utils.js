@@ -1,87 +1,127 @@
-import "firebase/firestore";
-import "firebase/auth";
-
-import firebase from "firebase/app";
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import 'firebase/messaging';
 
 const config = {
-  apiKey: "AIzaSyDxfPBrSTdZNpZAojJ4FJkJ6ePYs6RxJJs",
-  authDomain: "ecomm-db-668ec.firebaseapp.com",
-  projectId: "ecomm-db-668ec",
-  storageBucket: "ecomm-db-668ec.appspot.com",
-  messagingSenderId: "48471342001",
-  appId: "1:48471342001:web:07472a6f66a24f36995b90",
-  measurementId: "G-K06XY5LJ5R",
+    apiKey: 'AIzaSyDxfPBrSTdZNpZAojJ4FJkJ6ePYs6RxJJs',
+    authDomain: 'ecomm-db-668ec.firebaseapp.com',
+    projectId: 'ecomm-db-668ec',
+    storageBucket: 'ecomm-db-668ec.appspot.com',
+    messagingSenderId: '48471342001',
+    appId: '1:48471342001:web:07472a6f66a24f36995b90',
+    measurementId: 'G-K06XY5LJ5R',
 };
+firebase.initializeApp(config);
 
-// storing user data in firebase database
 export const createUserProfileDocument = async (userAuth, additionalData) => {
-  if (!userAuth) return;
+    if (!userAuth) return;
 
-  const userRef = firestore.doc(`users/${userAuth.uid}`);
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
 
-  const snapShot = await userRef.get();
+    const snapShot = await userRef.get();
 
-  console.log({ DocumentSnapshot: snapShot });
-
-  const collectionRef = firestore.collection(`users`);
-  const collectionSnapshot = await collectionRef.get();
-
-  console.log({
-    collectionSnapshot: collectionSnapshot.docs.map((doc) => doc.data()),
-  });
-
-  if (!snapShot.exists) {
-    const { displayName, email } = userAuth;
-    const createdAt = new Date();
-
-    try {
-      await userRef.set({
-        displayName,
-        email,
-        createdAt,
-        ...additionalData,
-      });
-    } catch (error) {
-      console.log("error creating user", error.message);
+    // Creating user in db
+    if (!snapShot.exists) {
+        const { displayName, email } = userAuth;
+        const createdAt = new Date();
+        try {
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additionalData,
+            });
+        } catch (error) {
+            console.log('error creating user', error.message);
+        }
+    } else {
+        const lastSignInTime = new Date();
+        await userRef.update({
+            lastSignInTime,
+        });
     }
-  }
-  return userRef;
+    return userRef;
 };
 
-// convert collections to map
-export const convertCollectionsSnapshotToMap = (collection) => {
-  const transformedCollection = collection.docs.map((doc) => {
-    const { title, items } = doc.data();
+export const addCollectionAndDocuments = async (
+    collectionKey,
+    ObjectsToAdd
+) => {
+    const collectionRef = firestore.collection(collectionKey);
+    const batch = firestore.batch();
 
-    return {
-      routeName: encodeURI(title.toLowerCase()),
-      id: doc.id,
-      title,
-      items,
-    };
-  });
-
-  return transformedCollection.reduce((accumulator, collection) => {
-    accumulator[collection.title.toLowerCase()] = collection;
-    return accumulator;
-  }, {});
+    ObjectsToAdd.forEach((obj) => {
+        const newDocRef = collectionRef.doc(obj.title);
+        batch.set(newDocRef, obj);
+    });
+    return await batch.commit();
 };
 
-// import to firebase
-export const addCollectionAndDocuments = (collectionKey, objectsToAdd) => {
-  const collectionRef = firestore.collection(collectionKey);
-  console.log(collectionRef);
+export const convertCollectionsSnapshotToMap = (CollectionSnapShot) => {
+    const transformedCollection = CollectionSnapShot.docs.map(
+        (documentSnapShot) => {
+            const { title, items } = documentSnapShot.data();
+            const { id } = documentSnapShot;
+            return {
+                title,
+                routeName: encodeURI(title.toLowerCase()),
+                items,
+                id,
+            };
+        }
+    );
+    return transformedCollection.reduce((accumlator, collection) => {
+        accumlator[collection.title.toLowerCase()] = collection;
+        return accumlator;
+    }, {});
 };
 
-// firebase.initializeApp(config);
-export default firebase.apps.length === 0
-  ? firebase.initializeApp(config)
-  : firebase.app();
-// export default firebase.app("noir-db");
+export const getCurrentUser = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+            unsubscribe();
+            resolve(userAuth);
+        }, reject);
+    });
+};
+export const subscribeToNotifications = () => {
+    const messaging = firebase.messaging.isSupported()
+        ? firebase.messaging()
+        : null;
 
-export const firestore = firebase.firestore();
+    if (!messaging) {
+        return;
+    }
+    if (!('Notification' in window)) {
+        alert('This browser does not support desktop notification');
+    } else if (Notification.permission === 'granted') {
+        /// do smth
+    } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(function (permission) {
+            // If the user accepts, let's create a notification
+            if (permission === 'granted') {
+                // do smth
+            }
+        });
+    }
+    messaging.usePublicVapidKey(
+        'BE-AmK0DgiR7FoX88JQJMqlGVhunDhzpo4PjlX27hyJQ5fbgkJkhX9qM4gM1_yHNZH7JNVmIamZkRbntXT55n7k'
+    );
+
+    // Let's check whether notification permissions have already been granted
+
+    messaging.onMessage((payload) => {
+        console.log('Message received. ', payload);
+        // ...
+    });
+};
 export const auth = firebase.auth();
+export const firestore = firebase.firestore();
 
-const provider = new firebase.auth.GoogleAuthProvider();
-provider.setCustomParameters({ prompt: "select_account" });
-export const signInWithGoogle = () => auth.signInWithPopup(provider);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({ prompt: 'select_account' });
+
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
+
+export default firebase;

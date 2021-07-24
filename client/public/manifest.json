@@ -1,24 +1,40 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FashionOrb",
+  "name": "FashionOrb Clothing Store",
   "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+
+    },
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "maskable any"
+
     },
     {
-      "src": "logo192.png",
+      "src": "TheFashionOrb.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "1897x967"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
+      "src": "Orb.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"

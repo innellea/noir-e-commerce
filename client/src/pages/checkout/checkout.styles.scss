@@ -5,6 +5,10 @@
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+  @media screen and(max-width: 1024px) {
+    width:auto;
+    padding: 15px;
+  }
 
   .checkout-header {
     width: 100%;
@@ -28,57 +32,15 @@
     margin-left: auto;
     font-size: 36px;
   }
-
-  // Warning alert
-  @import url("https://use.fontawesome.com/releases/v5.7.2/css/all.css");
-
-  .alert {
-    border-radius: 3px;
-    display: flex;
-    font-size: 36px;
-    line-height: 48px;
-    margin: 20px 0;
-    padding: 15px;
-    &:before {
-      -webkit-font-smoothing: antialiased;
-      display: inline-block;
-      font-family: "Font Awesome 5 Free";
-      font-display: swap;
-      font-size: 36px;
-      font-weight: 900;
-      height: 28px;
-      margin-right: 5px;
-      text-align: center;
-      vertical-align: top;
-      width: 22wv;
-    }
-
-    button {
-      margin-left: auto;
-      margin-top: 50px;
-    }
-
-    @mixin alert-version($mainColor, $thinColor, $icon) {
-      background: $thinColor;
-      color: $mainColor;
-      &:before {
-        content: $icon;
-      }
-      .button {
-        background: $mainColor;
-      }
-    }
-    &.info {
-      @include alert-version(#757575, #f5f5f5, "\f05a");
-    }
-    &.warning {
-      @include alert-version(#f49a26, #fff4c1, "\f071");
-    }
-    &.error {
-      @include alert-version(#ff4c10, #fce8e6, "\f06a");
-    }
-    &.success {
-      @include alert-version(#00a69f, #ddf2f2, "\f06a");
-    }
+  button {
+    margin-left: auto;
+    margin-top: 50px;
+  }
+  .test-warning {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 24px;
+    color: red;
   }
 }
+
