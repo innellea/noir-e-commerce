@@ -1,6 +1,6 @@
 {
   "extends": [
-    "auto"
+    "prettier"
   ],
   "env": {
     "browser": true,
