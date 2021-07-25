@@ -1,4 +1,4 @@
-<h1 align=center>Hype Train</h1>
+<h1 align=center>Noir Fashion</h1>
 
 > \*\*⚒ This is a fully functional ecommerce Web Application with authentication and stripe payment implementation.
 

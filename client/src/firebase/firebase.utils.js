@@ -2,6 +2,8 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 import 'firebase/auth';
 import 'firebase/messaging';
+import 'firebase/analytics';
+import 'firebase/database';
 
 const config = {
     apiKey: 'AIzaSyDxfPBrSTdZNpZAojJ4FJkJ6ePYs6RxJJs',
@@ -57,6 +59,7 @@ export const addCollectionAndDocuments = async (
     });
     return await batch.commit();
 };
+export const databaseServerTimestamp = firebase.database.ServerValue.TIMESTAMP;
 
 export const convertCollectionsSnapshotToMap = (CollectionSnapShot) => {
     const transformedCollection = CollectionSnapShot.docs.map(
@@ -106,7 +109,7 @@ export const subscribeToNotifications = () => {
         });
     }
     messaging.usePublicVapidKey(
-        'BE-AmK0DgiR7FoX88JQJMqlGVhunDhzpo4PjlX27hyJQ5fbgkJkhX9qM4gM1_yHNZH7JNVmIamZkRbntXT55n7k'
+        'BJzhp373H8nSLVApiS9ZE6v1mTO7RQ6vuVNHULWSRtW69pLc2LJ6lcK9oAI7L8pbVdzOwcP03r40MEe52ccFCI8'
     );
 
     // Let's check whether notification permissions have already been granted
@@ -118,6 +121,7 @@ export const subscribeToNotifications = () => {
 };
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+export const analytics = firebase.analytics();
 
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
