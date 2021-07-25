@@ -49,7 +49,9 @@ const Header = ({ currentUser, hidden, dispatch }) => {
             <LogoContainer as={Link} to='/'>
                 <LogoImage />
             </LogoContainer>
-            <Title>Hype Train</Title>
+            <Title as={Link} to='/'>
+                Hype Train
+            </Title>
             <OptionsContainer fixed={fixed}>
                 <OptionLink fixed={fixed} to='/shop'>
                     Shop
