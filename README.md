@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+<h1 align=center>Noir Fashion</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> \*\*⚒ This is a fully functional ecommerce Web Application with authentication and stripe payment implementation.
 
-## Available Scripts
+[![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-In the project directory, you can run:
+🏗 Build using:
 
-### `npm start`
+-   [React](https://reactjs.org/) - a popular user interface JavaScript library
+-   [Redux](https://redux.js.org/) - centralize and manage the state of JavaScript apps
+-   [React Router](https://reacttraining.com/react-router/) - helps to navigate through React components
+-   [reselect](https://github.com/reduxjs/reselect#motivation-for-memoized-selectors) - a "selector" library for Redux, to avoid recalculations of states by using memoized selectors
+-   [redux persist](https://github.com/rt2zz/redux-persist) - manage to persist redux store in storage
+-   [react-stripe-checkout](https://www.npmjs.com/package/react-stripe-checkout) - a React component the wraps Stripe checkout JavaScript for a better React integration
+-   [styled-components](https://www.styled-components.com/) - CSS in JS concept, allow developers style their components by using JavaScript
+-   [redux-thunk](https://www.npmjs.com/package/redux-thunk) - Redux Thunk middleware allows you to write action creators that return a function instead of an action
+-   [redux-saga](https://redux-saga.js.org/) - a library that aims to make application side effects(i.e. asynchronous things like data fetching and impure things like accessing the browser cache) easiter to manage
+-   [React Hooks](https://reactjs.org/docs/hooks-intro.html) - Enable function component to use state and other React features
+-   [React.lazy](https://reactjs.org/docs/code-splitting.html) - split React component into different chunks, then lazy load them
+-   [React.memo](https://reactjs.org/docs/react-api.html#reactmemo) - If your function component renders the same result given the same props, you can wrap it in a call to React.memo for a performance boost in some cases by memoizing the result
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+💈 Third Party Services
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-   [firebase](https://firebase.google.com/) - thirdparty service provider for authentication and datastorage
+-   [Stripe](https://stripe.com/) - online payment service platform
 
-### `npm test`
+🖥 Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-   [NodeJS](https://nodejs.org/en/) - Server side JavaScript
+-   [express](https://expressjs.com/) - Web framework for Node.js
 
-### `npm run build`
+☁ Hosted on Heroku
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Quick Start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clone the repo using Git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install the dependencies and start the app:
 
-### `npm run eject`
+```bash
+npm install && npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Code on! ⌨
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📜 TODO
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-   More Features, Such as - User's Profile (Order History, Favorites items/Wish List), Product's Page, Filtering Through Items, FAQ and more..),
+-   Automate the deploy steps

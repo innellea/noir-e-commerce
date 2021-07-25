@@ -1,0 +1,79 @@
+.cart-dropdown {
+  position: absolute;
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+  visibility: hidden;
+  /* This timing applies on the way OUT */
+  transition-timing-function: ease-in;
+
+  /* Quick on the way out */
+  transition: 0.2s;
+
+  /* Hide thing by pushing it outside by default */
+  transform: translateY(-130%);
+  .empty-message {
+    font-size: 18px;
+    margin: 50px auto;
+    visibility: hidden;
+  }
+
+
+  .cart-items {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+  }
+
+  button {
+    margin-top: auto;
+    visibility: hidden;
+
+  }
+
+
+}
+
+.cart-dropdown-is-shown {
+  position: absolute;
+  width: 240px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  top: 90px;
+  right: 40px;
+  z-index: 5;
+  transition-timing-function: ease-out;
+  transition: 0.25s;
+  /* Move into place */
+  transform: translateY(0);
+  
+  .empty-message {
+    font-size: 18px;
+    margin: 50px auto;
+  }
+
+
+  .cart-items {
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  button {
+    margin-top: auto;
+  }
+}
