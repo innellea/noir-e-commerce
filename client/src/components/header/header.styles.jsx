@@ -5,19 +5,14 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/Orb.svg';
 // Logo2;
 const HeaderContainerFixed = css`
-h1{
-    color:white;
-};
- position: sticky;
+    position: sticky;
     z-index: 5;
     background: #000000de;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.09);
     top: 0;
-      .st0 {
+    .st0 {
         fill: #c6c6c6;
-      }
-  }
-
+    }
 `;
 const CartIconFixed = css`
     div > svg > g > path {
