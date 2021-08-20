@@ -1,0 +1,14 @@
+{
+<<<<<<< HEAD
+    "packageRules": [
+        {
+            "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+            "automerge": true
+        }
+    ]
+=======
+  "extends": [
+    "config:base"
+  ]
+>>>>>>> 7e6fca2d4028c5b6960bbf858c47b866b5e7db76
+}
