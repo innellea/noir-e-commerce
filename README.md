@@ -1,10 +1,11 @@
-<h1 align=center>Hype Train</h1>
+<h1 align=center>Hypee E-commerce</h1>
 
 > \*\*⚒ This is a fully functional ecommerce Web Application with authentication and stripe payment implementation.
+There is an additional backup client with Express if Firebase would be down for any reason.
 
 [![style: styled-components](https://img.shields.io/badge/style-%F0%9F%92%85%20styled--components-orange.svg?colorB=daa357&colorA=db748e)](https://github.com/styled-components/styled-components)
 
-🏗 Build using:
+🏗 Built using:
 
 -   [React](https://reactjs.org/) - a popular user interface JavaScript library
 -   [Redux](https://redux.js.org/) - centralize and manage the state of JavaScript apps
