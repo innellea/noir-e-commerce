@@ -2,6 +2,10 @@
     "name": "NOIR",
     "version": "0.1.0",
     "private": true,
+    "engines": {
+        "node": "16.6.1",
+        "npm": "7.20.5"
+    },
     "proxy": "http://localhost:5000",
     "dependencies": {
         "@sweetalert/with-react": "0.1.1",
