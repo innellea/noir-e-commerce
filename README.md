@@ -1,4 +1,4 @@
-<h1 align=center>Hypee E-commerce</h1>
+<h1 align=center>N O I R </h1>
 
 > \*\*⚒ This is a fully functional ecommerce Web Application with authentication and stripe payment implementation.
 There is an additional backup client with Express if Firebase would be down for any reason.
