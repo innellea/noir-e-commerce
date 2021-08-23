@@ -8,7 +8,6 @@ import { createStructuredSelector } from 'reselect';
 
 import CartDropdown from '../cart-dropdown/cart-dropdown';
 import CartIcon from '../cart-icon/cart-icon';
-
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { signOutStart } from '../../redux/user/users.actions';
@@ -19,7 +18,7 @@ import {
     LogoImage,
     OptionLink,
     OptionsContainer,
-    Title,
+    Title
 } from './header.styles';
 
 const Header = ({ currentUser, hidden, dispatch }) => {
@@ -43,13 +42,13 @@ const Header = ({ currentUser, hidden, dispatch }) => {
             setFixed(false);
         }
     };
-    fixed = fixed ? 'fixed' : '';
+    fixed = fixed ? 'fixed' : false;
     return (
         <HeaderContainer fixed={fixed}>
             <LogoContainer as={Link} to='/'>
                 <LogoImage />
             </LogoContainer>
-            <Title>Hype Train</Title>
+            <Title>N O I R</Title>
             <OptionsContainer fixed={fixed}>
                 <OptionLink fixed={fixed} to='/shop'>
                     Shop
@@ -80,6 +79,6 @@ const Header = ({ currentUser, hidden, dispatch }) => {
 
 const mapStateToProps = createStructuredSelector({
     currentUser: selectCurrentUser,
-    hidden: selectCartHidden,
+    hidden: selectCartHidden
 });
 export default connect(mapStateToProps)(React.memo(Header));

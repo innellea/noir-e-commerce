@@ -5,7 +5,7 @@ import { BodyContainer, ContactContainer } from './contact.styles';
 const ContactPage = () => (
     <ContactContainer>
         <h5>GOT A QUESTION?</h5>
-        <h1 style={{ textAlign: 'center' }}>Contact Hype Train</h1>
+        <h1 style={{ textAlign: 'center' }}>Contact N O I R</h1>
         <p>
             We’re here to help and answer any question you might have. We look
             forward to hearing from you{' '}

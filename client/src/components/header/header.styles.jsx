@@ -9,6 +9,7 @@ const HeaderContainerFixed = css`
     z-index: 5;
     background: #000000de;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.09);
+    color: #fff;
     top: 0;
     .st0 {
         fill: #c6c6c6;
@@ -67,7 +68,7 @@ export const OptionsContainer = styled.div`
 export const Title = styled.h1`
     padding: 10px 8px;
     cursor: pointer;
-    color: ${({ fixed }) => (fixed ? 'white' : 'black')};
+    color: ${({ fixed }) => (fixed ? 'white' : 'white')};
     margin: 5px;
 `;
 export const OptionLink = styled(Link)`
