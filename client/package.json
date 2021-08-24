@@ -33,7 +33,7 @@
         "reselect": "4.0.0",
         "sass": "1.38.1",
         "snyk": "1.687.0",
-        "styled-components": "5.3.0",
+        "styled-components": "5.3.1",
         "sweetalert": "2.1.2",
         "use-dark-mode": "2.3.1"
     },
