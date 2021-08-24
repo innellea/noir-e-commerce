@@ -48,7 +48,9 @@ const Header = ({ currentUser, hidden, dispatch }) => {
             <LogoContainer as={Link} to='/'>
                 <LogoImage />
             </LogoContainer>
-            <Title>N O I R</Title>
+            <Title as={Link} to='/'>
+                N O I R
+            </Title>
             <OptionsContainer fixed={fixed}>
                 <OptionLink fixed={fixed} to='/shop'>
                     Shop

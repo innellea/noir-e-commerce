@@ -70,6 +70,7 @@ export const Title = styled.h1`
     cursor: pointer;
     color: ${({ fixed }) => (fixed ? 'white' : 'white')};
     margin: 5px;
+    font-size: 1.5em;
 `;
 export const OptionLink = styled(Link)`
     padding: 10px 8px;
