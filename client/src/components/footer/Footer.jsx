@@ -4,7 +4,7 @@ import { Container } from 'react-bootstrap';
 
 import './footer.scss';
 const Footer = () => (
-    // future Component
+    //TODO future Component
     <div></div>
 );
 export default Footer;

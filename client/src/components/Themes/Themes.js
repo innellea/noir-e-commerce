@@ -6,7 +6,7 @@ export const lightTheme = {
     h1: '#363537',
     a: '#b87253',
     button: '#b87253 !important',
-    p: '#363537 !important',
+    p: '#363537 !important'
 };
 export const darkTheme = {
     body: '#1c1c1e !important',
@@ -18,5 +18,5 @@ export const darkTheme = {
     acolor: '#fff !important',
     abackground: '#2c2c2e',
     button: '#d96741 !important',
-    p: '#fff !important',
+    p: '#fff !important'
 };

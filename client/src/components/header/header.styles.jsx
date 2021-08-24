@@ -2,17 +2,17 @@ import styled, { css } from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Logo } from '../../assets/Orb.svg';
+import { ReactComponent as Logo } from '../../assets/noirNonly.svg';
 // Logo2;
 const HeaderContainerFixed = css`
     position: sticky;
     z-index: 5;
-    background: #000000de;
+    background: #2d3445;
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.09);
     color: #fff;
     top: 0;
     .st0 {
-        fill: #c6c6c6;
+        fill: #f1b904;
     }
 `;
 const CartIconFixed = css`
@@ -51,7 +51,7 @@ export const LogoImage = styled(Logo)`
     width: 5vw;
     height: auto;
     min-width: 70px;
-    min-height: 35px;
+    min-height: auto;
     margin-right: auto;
 `;
 export const OptionsContainer = styled.div`
@@ -66,15 +66,19 @@ export const OptionsContainer = styled.div`
     ${({ fixed }) => (fixed ? CartIconFixed : '')}
 `;
 export const Title = styled.h1`
-    padding: 10px 8px;
+    padding: 8px 8px;
     cursor: pointer;
-    color: ${({ fixed }) => (fixed ? 'white' : 'white')};
+    color: #f1b904;
     margin: 5px;
+    text-align: center;
     font-size: 1.5em;
+    &:hover {
+        text-decoration: none;
+    }
 `;
 export const OptionLink = styled(Link)`
     padding: 10px 8px;
     cursor: pointer;
-    color: ${({ fixed }) => (fixed ? 'white' : 'black')};
+    color: ${({ fixed }) => (fixed ? '#F1B904' : 'black')};
     margin: 5px;
 `;
