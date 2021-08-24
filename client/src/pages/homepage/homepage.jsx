@@ -5,7 +5,7 @@ import BannerItem from '../../components/banner-item/banner-item';
 import { HomePageContainer, ArivalWrapper } from './hompage.styles';
 import CustomButton from '../../components/custom-button/custom-button';
 import { Slider } from '../../components/Slider/Slider';
-import { TextContainer } from './TextContainer.styles';
+import { SliderTextContainer } from './SliderTextContainer.styles';
 // @ts-ignore
 const HomePage = () => {
     return (
@@ -16,7 +16,7 @@ const HomePage = () => {
                 bannertype='center'
             > */}{' '}
             <Slider>
-                <TextContainer>
+                <SliderTextContainer>
                     <div className='flex_arrange'>
                         <p>New Arrivals</p>
                         <h1>
@@ -27,8 +27,8 @@ const HomePage = () => {
                             Shop Now
                         </CustomButton>
                     </div>
-                </TextContainer>
-            </Slider>{' '}
+                </SliderTextContainer>
+            </Slider>
             {/* </BannerItem> */}
             <Directory />
             <ArivalWrapper>

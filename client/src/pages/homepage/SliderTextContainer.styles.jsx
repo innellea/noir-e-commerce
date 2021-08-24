@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-export const TextContainer = styled.div`
+export const SliderTextContainer = styled.div`
     /* position: absolute; */
     /* margin: auto; */
     text-align: center;
