@@ -1,41 +1,9 @@
 {
-  "short_name": "FashionOrb",
-  "name": "FashionOrb Clothing Store",
-  "icons": [
-    {
-      "src": "android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable any"
+    "short_name": "Noir",
+    "name": "Noir",
 
-    },
-    {
-      "src": "android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable any"
-
-    },
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon",
-      "purpose": "maskable any"
-
-    },
-    {
-      "src": "TheFashionOrb.png",
-      "type": "image/png",
-      "sizes": "1897x967"
-    },
-    {
-      "src": "Orb.svg",
-      "type": "image/svg",
-      "sizes": "512x512"
-    }
-  ],
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff"
 }

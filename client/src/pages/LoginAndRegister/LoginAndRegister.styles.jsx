@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { ReactComponent as Orb } from '../../assets/noir.svg';
+import { ReactComponent as noir } from '../../assets/noir.svg';
 export const SignPageContainer = styled.div`
     display: flex;
     flex-flow: column;
@@ -31,7 +31,7 @@ export const RoutesContainer = styled.div`
         }
     }
 `;
-export const Logo = styled(Orb)`
+export const Logo = styled(noir)`
     height: 100px;
     width: 150px;
     max-width: 230px;

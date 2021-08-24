@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { connect } from 'react-redux';
 
 import { withRouter } from 'react-router-dom';
@@ -54,28 +52,24 @@ const StripeCheckoutButton = ({ price, dispatch, history }) => {
         return (
             <StripeButton
                 label='Pay Now'
-                name='Fashion Orb Ltd.'
+                name='Noir'
                 billingAddress
                 shippingAddress
-                image='noir.svg'
                 description={`Your toal is $${price}`}
                 amount={priceForStripe}
                 panelLabel='Pay Now'
                 token={onToken}
                 stripeKey={publishableKey}
-                // email="info@vidhub.co"
                 bitcoin
-                disabled
             />
         );
     }
     return (
         <StripeButton
             label='Pay Now'
-            name='Fashion Orb Ltd.'
+            name='N O I R.'
             billingAddress
             shippingAddress
-            image='noir.svg'
             description={`Your toal is $${price}`}
             amount={priceForStripe}
             panelLabel='Pay Now'
