@@ -28,7 +28,7 @@
         "redux-saga": "1.1.3",
         "redux-thunk": "2.4.1",
         "reselect": "4.1.5",
-        "sass": "1.45.1",
+        "sass": "1.45.2",
         "snyk": "1.812.0",
         "styled-components": "5.3.3",
         "sweetalert": "2.1.2",
