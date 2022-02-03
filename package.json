@@ -1,17 +1,13 @@
 {
     "name": "fashion-orb-server",
     "version": "1.0.0",
-    "engines": {
-        "node": "12.16.1",
-        "npm": "6.13.4"
-    },
     "scripts": {
         "client": "cd client && npm start",
         "server": "nodemon server.js",
         "build": "cd client && npm run build ",
         "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
         "start": "node server.js",
-        "heroku-postbuild": "cd client && npm install --force && npm install --force --no-shrinkwrap && npm run build"
+        "heroku-prebuild": "cd client && npm install --force && npm install --force --no-shrinkwrap && npm run build"
     },
     "dependencies": {
         "body-parser": "^1.19.0",
