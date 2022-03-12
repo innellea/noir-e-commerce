@@ -18,7 +18,7 @@
         "express-sslify": "1.2.0",
         "helmet": "5.0.2",
         "node-fetch": "3.2.3",
-        "stripe": "8.208.0"
+        "stripe": "8.209.0"
     },
     "devDependencies": {
         "concurrently": "7.0.0",
