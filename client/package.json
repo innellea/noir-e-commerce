@@ -20,7 +20,7 @@
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.3",
         "react-stripe-checkout": "2.6.3",
-        "react-toggle-dark-mode": "1.0.4",
+        "react-toggle-dark-mode": "1.1.0",
         "reactstrap": "9.1.1",
         "redux": "4.2.0",
         "redux-logger": "3.0.6",
